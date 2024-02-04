@@ -1,4 +1,7 @@
 # Electrodomésticos
+
+Aplicación basica de gestión de electrodomésticos de una tienda pequeña. Su funcionalidad es el cálculo de precio final/base del total de electrodomésticos/lavadoras/televisores
+
 ## Diagrama UML
 
 ![diagrama](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/44939ace-cd65-4fbb-8c55-71a437b3c7bd)
