@@ -1,13 +1,15 @@
 package models
 
-class Lavadora(idProducto: String,
-               precioBase: Float,
-               color: String,
-               consumo: Consumo,
-               peso: Float,
-               carga: Int) :
-    Electrodomestico(idProducto, precioBase, color, consumo, peso) {
+class Lavadora:Electrodomestico {
     private var carga:Int=5
+    constructor(idProducto:String,
+                precioBase:Float,
+                color:String,consumo:
+                Consumo,peso:Float,
+                carga:Int):super(idProducto, precioBase, color, consumo, peso){
+        this.carga=carga
+    }
+
 
     private fun precioCarga():Float{
         when (carga) {

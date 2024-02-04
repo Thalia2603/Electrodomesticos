@@ -1,19 +1,32 @@
 package models
 
-
-class Television(precioBase: Float, private var pulgadas: Int) : Electrodomestico(precioBase) {
-    init {
-        this.pulgadas = pulgadas
+class Television :Electrodomestico{
+    private var pulgadas:Int=28
+    constructor(idProducto:String,
+                precioBase: Float,
+                color:String, consumo: Consumo,
+                peso: Float,
+                pulgadas: Int):super(idProducto, precioBase, color, consumo, peso){
+        this.pulgadas=pulgadas
     }
 
-    override fun precioFinal(): Float {
-        precioConsumo()
-        when {
-            pulgadas in 21..32 -> precioBase += 50
-            pulgadas in 32..42 -> precioBase += 100
-            pulgadas in 42..51 -> precioBase += 150
-            pulgadas > 51 -> precioBase += 200
+    override fun gettprecioFinal(): Float {
+        var preciFinal=precioBase
+        return precioBase+precioConsumo()+precioPeso()+precioPulgadas()
+    }
+
+    private fun precioPulgadas():Float{
+        return when{
+            this.pulgadas > 51 -> 200f
+            this.pulgadas > 42 -> 150f
+            this.pulgadas > 32 -> 100f
+            this.pulgadas > 29 -> 50f
+            else -> 0f
         }
-        return precioBase
     }
+
+    override fun mostrarPrecioFinal() {
+        println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\n Pulgadas -> ${this.pulgadas}")
+    }
+
 }
