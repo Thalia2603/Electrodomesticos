@@ -44,3 +44,11 @@ Aplicación basica de gestión de electrodomésticos de una tienda pequeña. Su 
     }
     
     @enduml
+
+## Ejemplos de ejecución 
+
+- Ejecución n1:
+
+```kotlin
+for (electrodomestico in arrayDeElectrodomesticos){
+        println(electrodomestico)
