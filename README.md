@@ -4,16 +4,21 @@ Aplicación básica de gestión de electrodomésticos de una tienda pequeña. Su
 
 ## Diagrama UML
 
-![diagrama](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/44939ace-cd65-4fbb-8c55-71a437b3c7bd)
+![diagrama](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/c5a3f7bb-d1ca-4d2e-83e3-661963a7cc0b)
+
 
     - @startuml
+
     package models {
+          
         class Electrodomestico {
+        --Atributos--
             - idProducto: String = ""
             - precioBase: Float
             - color: String = "blanco"
             - consumo: Consumo = G
             - peso: Float = 5.0f
+        --Metodos--
             + settPrecioBase(precioBase: Float): void
             + settColor(color: String): void
             + gettPrecioBase(): Float
@@ -24,7 +29,9 @@ Aplicación básica de gestión de electrodomésticos de una tienda pequeña. Su
         }
     
         class Lavadora {
+        --Atributos--
             - carga: Int = 5
+        --Metodos--
             + Lavadora(idProducto: String, precioBase: Float, color: String, consumo: Consumo, peso: Float, carga: Int)
             + precioCarga(): Float
             + gettprecioFinal(): Float
@@ -32,7 +39,9 @@ Aplicación básica de gestión de electrodomésticos de una tienda pequeña. Su
         }
     
         class Television {
+        --Atributos--
             - pulgadas: Int = 28
+        --Metodos--
             + Television(idProducto: String, precioBase: Float, color: String, consumo: Consumo, peso: Float, pulgadas: Int)
             + precioPulgadas(): Float
             + gettprecioFinal(): Float
