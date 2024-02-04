@@ -53,7 +53,7 @@ open class Electrodomestico(
         return precioBase
     }
     //funcion que retorna el resultado
-    fun mostrarPrecioFinal() {
+    open fun mostrarPrecioFinal() {
         println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso} ")
     }
 }
