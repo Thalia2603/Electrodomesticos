@@ -1,26 +1,38 @@
 package models
 
-enum class Consumo{
-    A,B,C,D,E,F,G
+enum class Consumo {
+    A, B, C, D, E, F, G
 }
 
 open class Electrodomestico(
-    var precioBase: Float,
-    private var color: String = "Blanco",
-    private var consumo: Consumo=Consumo.G,
-    private var peso: Float = 5.0f
+    protected var idProducto:String="",
+    protected var precioBase: Float,
+    protected var color: String = "blanco",
+    protected var consumo: Consumo = Consumo.G,
+    protected var peso: Float = 5.0f
+
 ) {
-
-    fun settConsumo(consumoActualizado:Consumo){
-        this.consumo=consumoActualizado
+    //getters y setters
+    fun settPrecioBase(precioBase: Float){
+        this.precioBase=precioBase
     }
-
-    fun settPeso(pesoActualizado:Float){
-        this.peso=pesoActualizado
+    fun settColor(color: String){
+        val arrayColores= arrayOf("blanco","plateado","color")
+        if(arrayColores.indexOf(color.lowercase())!=-1) {
+            this.color=color
+        }
     }
-
-    public fun precioConsumo(){
-        when(consumo) {
+    fun gettPrecioBase():Float{
+        return this.precioBase
+    }
+    open fun gettprecioFinal(): Float {
+        var precioFinal=0.0f
+        precioFinal=precioConsumo()+precioPeso()
+        return precioFinal
+    }
+    //calculo precio segun el consumo/peso
+    fun precioConsumo():Float{
+        when (consumo) {
             Consumo.A -> precioBase += 35
             Consumo.B -> precioBase += 30
             Consumo.C -> precioBase += 25
@@ -29,66 +41,20 @@ open class Electrodomestico(
             Consumo.F -> precioBase += 10
             Consumo.G -> precioBase += 0
         }
-    }
-
-    public open fun precioPeso(){
-        when{
-            peso in 6.0..20.0 -> precioBase+=20
-            peso in 20.0..50.0 -> precioBase+=50
-            peso in 50.0..80.0 -> precioBase+=80
-            peso > 80 -> precioBase+=100
-        }
-    }
-
-    public open fun precioFinal():Float{
-        precioConsumo()
-        precioPeso()
         return precioBase
     }
-
-    fun mostrarPrecioFinal(){
-        println("El precio final es: ${precioFinal()} €")
-    }
-
-}
-
-class Lavadora(precioBase: Float) : Electrodomestico(precioBase) {
-    private var carga:Float=5.0f
-
-    override fun precioPeso(){
+    open fun precioPeso():Float {
         when {
-            carga in 6.0..7.0-> precioBase+=55
-            carga in 7.0..8.0 -> precioBase+=70
-            carga in 8.00..9.0 -> precioBase+=85
-            carga > 10.0 -> precioBase+=100
+            peso in 6.0..20.0 -> precioBase += 20
+            peso in 20.0..50.0 -> precioBase += 50
+            peso in 50.0..80.0 -> precioBase += 80
+            peso > 80 -> precioBase += 100
         }
-        super.precioPeso()
+        return precioBase
     }
-
-    override  fun precioFinal():Float{
-        precioConsumo()
-        precioPeso()
-        return  precioBase
+    //funcion que retorna el resultado
+    fun mostrarPrecioFinal() {
+        println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso} ")
     }
-}
-
-class Television(precioBase: Float) : Electrodomestico(precioBase) {
-    private var pulgadas:Int=28
-
-    fun precioPulgadas(){
-        when{
-            pulgadas in 21..32 -> precioBase+=50
-            pulgadas in 32..42 -> precioBase+=100
-            pulgadas in 42..51-> precioBase+=150
-            pulgadas>51 -> precioBase+=200
-        }
-    }
-
-    override fun precioFinal(): Float {
-        precioConsumo()
-        precioPulgadas()
-        return  precioBase
-    }
-
 }
 
