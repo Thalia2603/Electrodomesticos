@@ -52,3 +52,15 @@ Aplicación basica de gestión de electrodomésticos de una tienda pequeña. Su 
 ```kotlin
 for (electrodomestico in arrayDeElectrodomesticos){
         println(electrodomestico)
+```
+
+![ejecución1](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/0c0cfd52-af88-47d6-9116-40d9b938a57e)
+
+- Ejecución n2:
+  
+```kotlin
+mostrarResultados(pbTelevision,pbLavadora,pbElectrodomestico,pfTelevision,pfLavadora,pfElectrodomestico)
+```
+
+![ejecución2](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/81691994-0cfc-41f9-b5fc-ec1dbab7c9f6)
+
