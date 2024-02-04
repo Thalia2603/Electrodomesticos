@@ -19,10 +19,10 @@ fun main() {
         Lavadora("BoschLavadora", 500.0f, "plateado", Consumo.D, 35.0f, 12)
     )
 
-    for (electrodomestico in arrayDeElectrodomesticos){
+ /*   for (electrodomestico in arrayDeElectrodomesticos){
         println(electrodomestico)
     }
-
+*/
     val pbElectrodomestico= calcularPrecioBaseElectrodomesticos(arrayDeElectrodomesticos)
     val pfElectrodomestico= calcularPrecioFinalElectrodomesticos(arrayDeElectrodomesticos)
 

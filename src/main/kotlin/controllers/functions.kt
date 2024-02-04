@@ -3,6 +3,7 @@ package controllers
 import models.Electrodomestico
 import models.Lavadora
 import models.Television
+import utilities.*
 import java.security.Principal
 
 fun calcularPrecioBaseElectrodomesticos(array:Array<Electrodomestico>):Float{
@@ -69,14 +70,14 @@ fun mostrarResultados(
     pfLav: Float,
     pfElec: Float
 ){
-    println("------RESULTADOS GLOBALES------")
-    println("Electrodomésticos")
+    println("$RED_BACKGROUND ------RESULTADOS GLOBALES------ $RESET")
+    println("$BLUE_BACKGROUND Electrodomésticos $RESET")
     println("Precio Base -> $pbElec")
     println("Precio Total -> $pfElec")
-    println("Lavadoras")
+    println("$GREEN_BACKGROUND Lavadoras $RESET")
     println("Precio Base -> $pbLav")
     println("Precio Total -> $pfLav")
-    println("Televisores")
+    println("$YELLOW_BACKGROUND Televisores $RESET")
     println("Precio Base -> $pbTV")
     println("Precio Total -> $pfTV")
 }
