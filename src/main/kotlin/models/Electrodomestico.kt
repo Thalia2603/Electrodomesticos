@@ -1,5 +1,8 @@
 package models
 
+import utilities.BLUE_BACKGROUND
+import utilities.RESET
+
 enum class Consumo {
     A, B, C, D, E, F, G
 }
@@ -53,8 +56,8 @@ open class Electrodomestico(
         return precioBase
     }
     //funcion que retorna el resultado
-    open fun mostrarPrecioFinal() {
-        println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso} ")
+    override fun toString(): String {
+        return "\n${BLUE_BACKGROUND}Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}"
     }
 }
 

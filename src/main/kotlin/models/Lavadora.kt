@@ -1,5 +1,7 @@
 package models
 
+import utilities.*
+
 class Lavadora:Electrodomestico {
     private var carga:Int=5
     constructor(idProducto:String,
@@ -25,7 +27,7 @@ class Lavadora:Electrodomestico {
         return super.precioBase+precioPeso()+precioConsumo()+precioCarga()
     }
 
-    override fun mostrarPrecioFinal(){
-        println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\n Carga -> ${this.carga}")
+    override fun toString():String{
+       return "\n$GREEN_BACKGROUND Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\nCarga -> ${this.carga}"
     }
 }

@@ -1,5 +1,8 @@
 package models
 
+import utilities.RESET
+import utilities.YELLOW_BACKGROUND
+
 class Television :Electrodomestico{
     private var pulgadas:Int=28
     constructor(idProducto:String,
@@ -25,8 +28,8 @@ class Television :Electrodomestico{
         }
     }
 
-    override fun mostrarPrecioFinal() {
-        println("Producto -> ${this.idProducto}\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\n Pulgadas -> ${this.pulgadas}")
+    override fun toString():String {
+        return "\n${YELLOW_BACKGROUND}Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\nPulgadas -> ${this.pulgadas}"
     }
 
 }
