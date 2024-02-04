@@ -1,6 +1,6 @@
 # Electrodomésticos
 
-Aplicación basica de gestión de electrodomésticos de una tienda pequeña. Su funcionalidad es el cálculo de precio final/base del total de electrodomésticos/lavadoras/televisores
+Aplicación básica de gestión de electrodomésticos de una tienda pequeña. Su funcionalidad es el cálculo de precio final/base del total de electrodomésticos/lavadoras/televisores.
 
 ## Diagrama UML
 
