@@ -63,7 +63,8 @@ for (electrodomestico in arrayDeElectrodomesticos){
         println(electrodomestico)
 ```
 
-![ejecución1](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/0c0cfd52-af88-47d6-9116-40d9b938a57e)
+![primeraej](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/8e9827d3-ace5-44d3-b2d9-a5239392f852)
+
 
 - Ejecución n2:
   
@@ -71,5 +72,6 @@ for (electrodomestico in arrayDeElectrodomesticos){
 mostrarResultados(pbTelevision,pbLavadora,pbElectrodomestico,pfTelevision,pfLavadora,pfElectrodomestico)
 ```
 
-![ejecución2](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/81691994-0cfc-41f9-b5fc-ec1dbab7c9f6)
+![segundaej](https://github.com/Thalia2603/Electrodomesticos/assets/153110473/617ace4c-d12c-4a33-8348-20aca16c5d9b)
+
 
