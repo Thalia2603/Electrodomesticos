@@ -42,6 +42,7 @@ fun calcularPrecioFinalLavadoras(array: Array<Electrodomestico>):Float{
     return precio
 }
 
+
 fun calcularPrecioBaseTelevisiones(array: Array<Electrodomestico>):Float{
     var precio=0f
     for (television in array){
@@ -70,8 +71,8 @@ fun mostrarResultados(
     pfLav: Float,
     pfElec: Float
 ){
-    println("$RED_BACKGROUND ------RESULTADOS GLOBALES------ $RESET")
-    println("$BLUE_BACKGROUND Electrodomésticos $RESET")
+    println("\n$RED_BACKGROUND ------RESULTADOS GLOBALES------ $RESET")
+    println("\n$BLUE_BACKGROUND Electrodomésticos $RESET")
     println("Precio Base -> $pbElec")
     println("Precio Total -> $pfElec")
     println("$GREEN_BACKGROUND Lavadoras $RESET")

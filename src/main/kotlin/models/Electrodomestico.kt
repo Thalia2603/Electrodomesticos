@@ -3,9 +3,7 @@ package models
 import utilities.BLUE_BACKGROUND
 import utilities.RESET
 
-enum class Consumo {
-    A, B, C, D, E, F, G
-}
+
 
 open class Electrodomestico(
     protected var idProducto:String="",
