@@ -7,16 +7,16 @@ import models.Television
 
 fun main() {
     val arrayDeElectrodomesticos:Array<Electrodomestico> =arrayOf(
-        Electrodomestico("Horno01", 250.0f, "negro", Consumo.C, 15.0f),
-        Electrodomestico("Lavavajillas03", 350.0f, "plateado", Consumo.A, 18.5f),
-        Electrodomestico("Aspiradora05", 120.0f, "rojo", Consumo.B,8.0f),
-        Electrodomestico("Licuadora07", 80.0f, "verde", Consumo.D, 3.5f),
-        Electrodomestico("Cafetera09", 60.0f, "blanco", Consumo.E, 1.8f),
-        Electrodomestico("Tostadora11", 40.0f, "gris", Consumo.G, 1.2f),
-        Television("LGTV32", 600.0f, "negro", Consumo.F, 20.0f, 32),
-        Television("PanasonicTV42", 800.0f, "plateado", Consumo.B, 25.0f, 42),
-        Lavadora("WhirlpoolLavadora", 450.0f, "blanco", Consumo.G, 30.0f, 10),
-        Lavadora("BoschLavadora", 500.0f, "plateado", Consumo.D, 35.0f, 12)
+        Electrodomestico("Horno01", 250.0, "negro", Consumo.C, 15.0),
+        Electrodomestico("Lavavajillas03", 350.0, "plateado", Consumo.A, 18.5),
+        Electrodomestico("Aspiradora05", 120.0, "rojo", Consumo.B,8.0),
+        Electrodomestico("Licuadora07", 80.0, "verde", Consumo.D, 3.5),
+        Electrodomestico("Cafetera09", 60.0, "blanco", Consumo.E, 1.8),
+        Electrodomestico("Tostadora11", 40.0, "gris", Consumo.G, 1.2),
+        Television("LGTV32", 600.0, "negro", Consumo.F, 20.0, 32),
+        Television("PanasonicTV42", 800.0, "plateado", Consumo.B, 25.0, 42),
+        Lavadora("WhirlpoolLavadora", 450.0, "blanco", Consumo.G, 30.0, 10),
+        Lavadora("BoschLavadora", 500.0, "plateado", Consumo.D, 35.0, 12)
     )
 
    for (electrodomestico in arrayDeElectrodomesticos){

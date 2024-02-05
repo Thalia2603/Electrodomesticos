@@ -6,24 +6,24 @@ import models.Television
 import utilities.*
 import java.security.Principal
 
-fun calcularPrecioBaseElectrodomesticos(array:Array<Electrodomestico>):Float{
-    var precio:Float=0f
+fun calcularPrecioBaseElectrodomesticos(array:Array<Electrodomestico>):Double{
+    var precio=0.0
     for (electrodomestico in array){
         precio+=electrodomestico.gettPrecioBase()
     }
     return precio
 }
 
-fun calcularPrecioFinalElectrodomesticos(array: Array<Electrodomestico>):Float{
-    var precio:Float=0f
+fun calcularPrecioFinalElectrodomesticos(array: Array<Electrodomestico>):Double{
+    var precio=0.0
     for (electrodomestico in array){
         precio+=electrodomestico.gettprecioFinal()
     }
     return precio
 }
 
-fun calcularPrecioBaseLavadoras(array: Array<Electrodomestico>):Float{
-    var precio=0f
+fun calcularPrecioBaseLavadoras(array: Array<Electrodomestico>):Double{
+    var precio=0.0
     for(lavadora in array){
         if (lavadora is Lavadora){
             precio+=lavadora.gettPrecioBase()
@@ -32,8 +32,8 @@ fun calcularPrecioBaseLavadoras(array: Array<Electrodomestico>):Float{
     return precio
 }
 
-fun calcularPrecioFinalLavadoras(array: Array<Electrodomestico>):Float{
-    var precio=0f
+fun calcularPrecioFinalLavadoras(array: Array<Electrodomestico>):Double{
+    var precio=0.0
     for (lavadora in array){
         if (lavadora is Lavadora){
             precio+=lavadora.gettprecioFinal()
@@ -43,8 +43,8 @@ fun calcularPrecioFinalLavadoras(array: Array<Electrodomestico>):Float{
 }
 
 
-fun calcularPrecioBaseTelevisiones(array: Array<Electrodomestico>):Float{
-    var precio=0f
+fun calcularPrecioBaseTelevisiones(array: Array<Electrodomestico>):Double{
+    var precio=0.0
     for (television in array){
         if (television is Television){
             precio+=television.gettPrecioBase()
@@ -53,8 +53,8 @@ fun calcularPrecioBaseTelevisiones(array: Array<Electrodomestico>):Float{
     return precio
 }
 
-fun calcularPrecioFinalTelevisiones(array: Array<Electrodomestico>):Float{
-    var precio=0f
+fun calcularPrecioFinalTelevisiones(array: Array<Electrodomestico>):Double{
+    var precio=0.0
     for (television in array){
         if (television is Television){
             precio+=television.gettprecioFinal()
@@ -64,21 +64,21 @@ fun calcularPrecioFinalTelevisiones(array: Array<Electrodomestico>):Float{
 }
 
 fun mostrarResultados(
-    pbTV: Float,
-    pbLav: Float,
-    pbElec: Float,
-    pfTV: Float,
-    pfLav: Float,
-    pfElec: Float
+    pbTV: Double,
+    pbLav: Double,
+    pbElec: Double,
+    pfTV: Double,
+    pfLav: Double,
+    pfElec: Double
 ){
     println("\n$RED_BACKGROUND ------RESULTADOS GLOBALES------ $RESET")
     println("\n$BLUE_BACKGROUND Electrodomésticos $RESET")
-    println("Precio Base -> $pbElec")
-    println("Precio Total -> $pfElec")
-    println("$GREEN_BACKGROUND Lavadoras $RESET")
-    println("Precio Base -> $pbLav")
-    println("Precio Total -> $pfLav")
-    println("$YELLOW_BACKGROUND Televisores $RESET")
-    println("Precio Base -> $pbTV")
-    println("Precio Total -> $pfTV")
+    println("Precio Base -> $pbElec€")
+    println("Precio Total -> $pfElec€")
+    println("\n$GREEN_BACKGROUND Lavadoras $RESET")
+    println("Precio Base -> $pbLav€")
+    println("Precio Total -> $pfLav€")
+    println("\n$YELLOW_BACKGROUND Televisores $RESET")
+    println("Precio Base -> $pbTV€")
+    println("Precio Total -> $pfTV€")
 }

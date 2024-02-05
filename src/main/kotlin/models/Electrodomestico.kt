@@ -7,14 +7,14 @@ import utilities.RESET
 
 open class Electrodomestico(
     protected var idProducto:String="",
-    protected var precioBase: Float,
+    protected var precioBase: Double,
     protected var color: String = "blanco",
     protected var consumo: Consumo = Consumo.G,
-    protected var peso: Float = 5.0f
+    protected var peso: Double = 5.0
 
 ) {
     //getters y setters
-    fun settPrecioBase(precioBase: Float){
+    fun settPrecioBase(precioBase: Double){
         this.precioBase=precioBase
     }
     fun settColor(color: String){
@@ -23,16 +23,16 @@ open class Electrodomestico(
             this.color=color
         }
     }
-    fun gettPrecioBase():Float{
+    fun gettPrecioBase():Double{
         return this.precioBase
     }
-    open fun gettprecioFinal(): Float {
-        var precioFinal=0.0f
+    open fun gettprecioFinal(): Double {
+        var precioFinal=0.0
         precioFinal=precioConsumo()+precioPeso()
         return precioFinal
     }
     //calculo precio segun el consumo/peso
-    fun precioConsumo():Float{
+    fun precioConsumo():Double{
         when (consumo) {
             Consumo.A -> precioBase += 35
             Consumo.B -> precioBase += 30
@@ -44,7 +44,7 @@ open class Electrodomestico(
         }
         return precioBase
     }
-    open fun precioPeso():Float {
+    open fun precioPeso():Double {
         when {
             peso in 6.0..20.0 -> precioBase += 20
             peso in 20.0..50.0 -> precioBase += 50
@@ -55,7 +55,7 @@ open class Electrodomestico(
     }
     //funcion que retorna el resultado
     override fun toString(): String {
-        return "\n${BLUE_BACKGROUND}Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}"
+        return "\n${BLUE_BACKGROUND}Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}€\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\nPrecio Final -> ${this.gettprecioFinal()}€"
     }
 }
 

@@ -5,15 +5,15 @@ import utilities.*
 class Lavadora:Electrodomestico {
     private var carga:Int=5
     constructor(idProducto:String,
-                precioBase:Float,
+                precioBase:Double,
                 color:String,consumo:
-                Consumo,peso:Float,
+                Consumo,peso:Double,
                 carga:Int):super(idProducto, precioBase, color, consumo, peso){
         this.carga=carga
     }
 
 
-    private fun precioCarga():Float{
+    private fun precioCarga():Double{
         when (carga) {
             6, 7 -> precioBase+=55
             8 -> precioBase+=70
@@ -22,12 +22,12 @@ class Lavadora:Electrodomestico {
         }
         return precioBase
     }
-    override fun gettprecioFinal(): Float {
+    override fun gettprecioFinal(): Double {
         var precioFinal=0.0f
         return super.precioBase+precioPeso()+precioConsumo()+precioCarga()
     }
 
     override fun toString():String{
-       return "\n$GREEN_BACKGROUND Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\nCarga -> ${this.carga}"
+       return "\n$GREEN_BACKGROUND Producto -> ${this.idProducto}$RESET\nPrecio Base -> ${this.precioBase}€\nColor -> ${this.color}\nConsumo -> ${this.consumo}\nPeso -> ${this.peso}\nCarga -> ${this.carga}\nPrecio final -> ${this.gettprecioFinal()}€"
     }
 }
